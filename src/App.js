@@ -4,14 +4,17 @@ import './App.css';
 import ParticlesBg from 'particles-bg';
 // components
 import Navigation from './components/Navigation/Navigation';
-import Logo from './Logo/Logo';
+import Logo from './components/Logo/Logo';
+import ImageLinkForm from './components/LinkForm/ImageLinkForm';
+import Rank from './components/Rank/Rank';
 
 function App() {
   return (
     <div className="App">
       <Navigation />
       <Logo />
-      {/* <ImageLinkForm /> */}
+      <Rank />
+      <ImageLinkForm />
       {/* <FaceRecognition /> */}
       <ParticlesBg type="cobweb" bg={true} />
     </div>

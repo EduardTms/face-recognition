@@ -1,0 +1,9 @@
+.rank-container {
+    width: calc(100% / 3);
+}
+
+@media only screen and (max-width: 600px) {
+    .rank-container {
+      width: calc(100% / 1.5);
+    }
+  }
