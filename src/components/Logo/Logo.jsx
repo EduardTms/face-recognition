@@ -16,7 +16,7 @@ const Logo = () => {
             glareBorderRadius="20px">
                 <div 
                 style={{ height: '120px', width: '120px' }}
-                className="logo-container ba br2 shadow-3"
+                className="logo-container ba br2 shadow-3 bg-light-pink"
                 >
                     <img src={faceScanner} alt="logo" />
                 </div>
