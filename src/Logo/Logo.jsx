@@ -1,5 +1,6 @@
 import React from "react";
 import Tilt from 'react-parallax-tilt'
+import faceScanner from './face-scanner.png';
 import './Logo.css';
 
 const Logo = () => {
@@ -17,7 +18,7 @@ const Logo = () => {
                 style={{ height: '120px', width: '120px' }}
                 className="logo-container ba br2 shadow-3"
                 >
-                    Face Recognition 👀
+                    <img src={faceScanner} alt="logo" />
                 </div>
             </Tilt>
         </div>
