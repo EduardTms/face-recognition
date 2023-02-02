@@ -1,52 +1,11 @@
+import React from "react";
 
-    //////////////////////////////////////////////////////////////////////////////////////////
-    // In this section, we set the user authentication, app ID, model details, and the URL
-    // of the image we want as an input. Change these strings to run your own example.
-    /////////////////////////////////////////////////////////////////////////////////////////
+const Api = () => {
+    return(
+        <div className="center">
+            <img src={'https://randomwordgenerator.com/img/picture-generator/52e5d0414c51af14f1dc8460962e33791c3ad6e04e50744172287ad19f48c3_640.jpg'} alt="noAlt" />
+        </div>
+    );
+}
 
-    const USER_ID = 'YOUR_USER_ID_HERE';
-    // Your PAT (Personal Access Token) can be found in the portal under Authentification
-    const PAT = 'YOUR_PAT_HERE';
-    const APP_ID = 'YOUR_APP_ID_HERE';
-    // Change these to whatever model and image URL you want to use
-    const MODEL_ID = 'face-detection';
-    const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105';    
-    const IMAGE_URL = 'https://samples.clarifai.com/metro-north.jpg';
-
-    ///////////////////////////////////////////////////////////////////////////////////
-    // YOU DO NOT NEED TO CHANGE ANYTHING BELOW THIS LINE TO RUN THIS EXAMPLE
-    ///////////////////////////////////////////////////////////////////////////////////
-
-    const raw = JSON.stringify({
-        "user_app_id": {
-            "user_id": USER_ID,
-            "app_id": APP_ID
-        },
-        "inputs": [
-            {
-                "data": {
-                    "image": {
-                        "url": IMAGE_URL
-                    }
-                }
-            }
-        ]
-    });
-
-    const requestOptions = {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Authorization': 'Key ' + PAT
-        },
-        body: raw
-    };
-
-    // NOTE: MODEL_VERSION_ID is optional, you can also call prediction with the MODEL_ID only
-    // https://api.clarifai.com/v2/models/{YOUR_MODEL_ID}/outputs
-    // this will default to the latest version_id
-
-    fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
+export default Api;
