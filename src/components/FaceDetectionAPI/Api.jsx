@@ -2,8 +2,10 @@ import React from "react";
 
 const Api = ({ imageURL }) => {
     return(
-        <div className="center">
-            <img src={imageURL} alt="noAlt" />
+        <div className="center ma">
+            <div className="absolute mt2">
+                <img src={imageURL} alt="noAlt" width='500px' height='auto' />
+            </div>
         </div>
     );
 }
