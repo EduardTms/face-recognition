@@ -32,11 +32,19 @@ class App extends Component {
     const width = Number(image.width);
     const height = Number(image.height);
     return {
+      // the percentage of the width (face.left_col) * width to find out where the column should be
       leftCol: face.left_col * width,
+      // same as left col
       topRow: face.top_row * height,
+      // finding the parallel point of the leftCol, that is on the opposite side of the face
+      // it's the same concept as before, just subtracting the width of the right column from the total width
       rightCol: width - (face.right_col * width),
       bottomRow: height - (face.bottom_row * height)
     }
+  }
+
+  displayBoundingBox = (box) => {
+    this.setState({box: box});
   }
 
   onInputChange = (event) => {
@@ -48,7 +56,7 @@ class App extends Component {
     app.models.predict(
       Clarifai.FACE_DETECT_MODEL,
       this.state.input)
-      .then(response => this.calculateFaceLocation(response))
+      .then(response => this.displayBoundingBox(this.calculateFaceLocation(response)))
       .catch(err => console.log(err))
   }
 
