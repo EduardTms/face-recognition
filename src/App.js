@@ -67,7 +67,7 @@ class App extends Component {
       <Logo />
       <Rank />
       <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
-      <Api imageURL={this.state.imageURL}/>
+      <Api box={this.state.box} imageURL={this.state.imageURL}/>
       <ParticlesBg type="cobweb" bg={true} />
     </div>
     )
