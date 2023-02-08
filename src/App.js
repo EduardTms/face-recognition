@@ -13,7 +13,7 @@ import SignIn from "./components/SignIn/SignIn";
 import Register from "./components/Register/Register";
 
 // const app = new Clarifai.App({
-//   apiKey: "2ee21aaf86de4a07ba1402e145d6af85",
+//   apiKey: "6b2b48851e9544b7ac26df4c3e1fef24",
 // });
 
 class App extends Component {
@@ -56,10 +56,32 @@ class App extends Component {
   // onButtonSubmit = () => {
   //   this.setState({ imageURL: this.state.input });
   //   app.models
-  //     .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
-  //     .then((response) =>
-  //       this.displayBoundingBox(this.calculateFaceLocation(response)),
+  //     .predict(
+  //       {
+  //         id: "face-detection",
+  //         name: "face-detection",
+  //         version: "6dc7e46bc9124c5c8824be4822abe105",
+  //         type: "visual-detector",
+  //       },
+  //       this.state.input,
   //     )
+  //     .then((response) => {
+  //       console.log("hi", response);
+  //       if (response) {
+  //         fetch("http://localhost:3000/image", {
+  //           method: "put",
+  //           headers: { "Content-Type": "application/json" },
+  //           body: JSON.stringify({
+  //             id: this.state.user.id,
+  //           }),
+  //         })
+  //           .then((response) => response.json())
+  //           .then((count) => {
+  //             this.setState(Object.assign(this.state.user, { entries: count }));
+  //           });
+  //       }
+  //       this.displayFaceBox(this.calculateFaceLocation(response));
+  //     })
   //     .catch((err) => console.log(err));
   // };
 
