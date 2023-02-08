@@ -73,13 +73,15 @@ class App extends Component {
   };
 
   render() {
+    // destructuring
+    const { isSignedIn, imageURL, route, box } = this.state;
     return (
       <div className="App">
         <Navigation
-          isSignedIn={this.state.isSignedIn}
+          isSignedIn={isSignedIn}
           onRouteChange={this.onRouteChange}
         />
-        {this.state.route === "home" ? (
+        {route === "home" ? (
           <div>
             <Logo />
             <Rank />
@@ -87,10 +89,10 @@ class App extends Component {
               onInputChange={this.onInputChange}
               onButtonSubmit={this.onButtonSubmit}
             />
-            {/* <Api box={this.state.box} imageURL={this.state.imageURL} /> */}
+            {/* <Api box={box} imageURL={imageURL} /> */}
             <ParticlesBg type="cobweb" bg={true} />
           </div>
-        ) : this.state.route === "signin" ? (
+        ) : route === "signin" ? (
           <SignIn onRouteChange={this.onRouteChange} />
         ) : (
           <Register onRouteChange={this.onRouteChange} />
