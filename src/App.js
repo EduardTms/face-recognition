@@ -22,6 +22,7 @@ class App extends Component {
       input: "",
       imageURL: "",
       box: {},
+      route: "signin",
     };
   }
 
@@ -60,19 +61,28 @@ class App extends Component {
       .catch((err) => console.log(err));
   };
 
+  onRouteChange = () => {
+    this.setState({ route: "home" });
+  };
+
   render() {
     return (
       <div className="App">
         <Navigation />
-        <SignIn />
-        <Logo />
-        <Rank />
-        <ImageLinkForm
-          onInputChange={this.onInputChange}
-          onButtonSubmit={this.onButtonSubmit}
-        />
-        <Api box={this.state.box} imageURL={this.state.imageURL} />
-        <ParticlesBg type="cobweb" bg={true} />
+        {this.state.route === "signin" ? (
+          <SignIn onRouteChange={this.onRouteChange} />
+        ) : (
+          <div>
+            <Logo />
+            <Rank />
+            <ImageLinkForm
+              onInputChange={this.onInputChange}
+              onButtonSubmit={this.onButtonSubmit}
+            />
+            <Api box={this.state.box} imageURL={this.state.imageURL} />
+            <ParticlesBg type="cobweb" bg={true} />
+          </div>
+        )}
       </div>
     );
   }
