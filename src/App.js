@@ -10,6 +10,7 @@ import ImageLinkForm from "./components/LinkForm/ImageLinkForm";
 import Rank from "./components/Rank/Rank";
 import Api from "./components/FaceDetectionAPI/Api";
 import SignIn from "./components/SignIn/SignIn";
+import Register from "./components/Register/Register";
 
 const app = new Clarifai.App({
   apiKey: "2ee21aaf86de4a07ba1402e145d6af85",
@@ -69,9 +70,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navigation onRouteChange={this.onRouteChange} />
-        {this.state.route === "signin" ? (
-          <SignIn onRouteChange={this.onRouteChange} />
-        ) : (
+        {this.state.route === "home" ? (
           <div>
             <Logo />
             <Rank />
@@ -82,6 +81,10 @@ class App extends Component {
             <Api box={this.state.box} imageURL={this.state.imageURL} />
             <ParticlesBg type="cobweb" bg={true} />
           </div>
+        ) : this.state.route === "signin" ? (
+          <SignIn onRouteChange={this.onRouteChange} />
+        ) : (
+          <Register onRouteChange={this.onRouteChange} />
         )}
       </div>
     );
