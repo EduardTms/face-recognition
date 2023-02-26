@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 // Libraries
 import ParticlesBg from "particles-bg";
-import Clarifai from "clarifai";
 // components
 import Navigation from "./components/Navigation/Navigation";
 import Logo from "./components/Logo/Logo";
@@ -72,7 +71,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
-    fetch("http://localhost:3000/image", {
+    fetch("http://localhost:3000/imageURL", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
