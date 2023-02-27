@@ -3,16 +3,16 @@ import "./BoundingBox.css";
 
 const Api = ({ imageURL, box }) => {
   return (
-    <div className="center ma">
-      <div className="absolute mt2">
-        <img id="inputimage" alt="" src={imageURL} width="500px" heigh="auto" />
+    <div className="center ma" id="middle">
+      <div className=" mt2 absolute">
+        <img id="inputimage" alt="" src={imageURL} />
         <div
           className="bounding-box"
           style={{
-            top: box.topRow,
-            right: box.rightCol,
             bottom: box.bottomRow,
             left: box.leftCol,
+            right: box.rightCol,
+            top: box.topRow,
           }}
         ></div>
       </div>

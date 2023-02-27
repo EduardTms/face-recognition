@@ -1,4 +1,4 @@
-bounding-box {
+.bounding-box {
     /* copied from clarifai face-recognition model */
     position: absolute;
     box-shadow: 0 0 0 3px #149df2 inset;
@@ -6,4 +6,16 @@ bounding-box {
     flex-wrap: wrap;
     justify-content: center;
     cursor: pointer;
+}
+
+#inputimage {
+    width: 500px;
+    height: auto;
+}
+
+#middle {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
 }

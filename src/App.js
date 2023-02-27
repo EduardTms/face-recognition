@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import "./App.css";
 // Libraries
+import React, { Component } from "react";
 import ParticlesBg from "particles-bg";
+// CSS
+import "./App.css";
 // components
 import Navigation from "./components/Navigation/Navigation";
 import Logo from "./components/Logo/Logo";
@@ -29,7 +30,7 @@ const initialState = {
 class App extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = initialState;
   }
 
   loadUser = (data) => {
@@ -56,8 +57,8 @@ class App extends Component {
       topRow: face.top_row * height,
       // finding the parallel point of the leftCol, that is on the opposite side of the face
       // it's the same concept as before, just subtracting the width of the right column from the total width
-      rightCol: width - face.right_col * width,
-      bottomRow: height - face.bottom_row * height,
+      rightCol: width - (face.right_col * width),
+      bottomRow: height - (face.bottom_row * height),
     };
   };
 
@@ -70,7 +71,7 @@ class App extends Component {
   };
 
   onButtonSubmit = () => {
-    this.setState({ imageUrl: this.state.input });
+    this.setState({ imageURL: this.state.input });
     fetch("http://localhost:3000/imageURL", {
       method: "post",
       headers: { "Content-Type": "application/json" },
