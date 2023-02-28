@@ -57,8 +57,8 @@ class App extends Component {
       topRow: face.top_row * height,
       // finding the parallel point of the leftCol, that is on the opposite side of the face
       // it's the same concept as before, just subtracting the width of the right column from the total width
-      rightCol: width - (face.right_col * width),
-      bottomRow: height - (face.bottom_row * height),
+      rightCol: width - face.right_col * width,
+      bottomRow: height - face.bottom_row * height,
     };
   };
 
@@ -72,7 +72,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageURL: this.state.input });
-    fetch("http://localhost:3000/imageURL", {
+    fetch("https://nameless-reef-02646.herokuapp.com/imageURL", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -82,7 +82,7 @@ class App extends Component {
       .then((response) => response.json())
       .then((response) => {
         if (response) {
-          fetch("http://localhost:3000/image", {
+          fetch("https://nameless-reef-02646.herokuapp.com/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
