@@ -16,7 +16,10 @@ class SignIn extends React.Component {
   onPasswordChange = (event) => {
     this.setState({ signInPassword: event.target.value });
   };
-
+  // Upon submitting the form:
+  // 1. Send the email and password to the server
+  //    - If the server responds with a 200 status code:
+  // 2. Redirect to the homepage
   onSubmit = () => {
     fetch("https://nameless-reef-02646.herokuapp.com/signin", {
       method: "POST",
@@ -38,6 +41,7 @@ class SignIn extends React.Component {
   };
 
   render() {
+    // deconstruct the state
     const { onRouteChange } = this.props;
     return (
       <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">

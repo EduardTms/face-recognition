@@ -22,6 +22,9 @@ class Register extends React.Component {
     this.setState({ password: event.target.value });
   };
 
+  // Upon submitting the form, we'll send the POST request to the API endpoint
+  // which will create a new user in the database.
+  // Then, we'll redirect the browser to the dashboard.
   onSubmit = () => {
     fetch("https://nameless-reef-02646.herokuapp.com/register", {
       method: "POST",
