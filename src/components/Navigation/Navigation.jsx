@@ -2,6 +2,8 @@
 import React from "react";
 
 const Navigation = ({ onRouteChange, isSignedIn }) => {
+  // If it's signed in, show the sign out button
+  // Otherwise, show the Sign in form and Register button
   if (isSignedIn) {
     return (
       <nav style={{ display: "flex", justifyContent: "flex-end" }}>

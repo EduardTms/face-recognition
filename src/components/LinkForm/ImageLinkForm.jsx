@@ -1,5 +1,6 @@
 import React from "react";
 
+// This is the form where the user enters the Image link
 const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
     return (
         <div>

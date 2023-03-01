@@ -8,6 +8,7 @@
     cursor: pointer;
 }
 
+/* Used css to give Image width/height and center it as tachyons wouldn't work */
 #inputimage {
     width: 500px;
     height: auto;

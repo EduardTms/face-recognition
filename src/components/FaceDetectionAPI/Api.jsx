@@ -1,6 +1,7 @@
 import React from "react";
 import "./BoundingBox.css";
 
+// This takes the imageURL, puts it below the form and also puts the bounding box around it
 const Api = ({ imageURL, box }) => {
   return (
     <div className="center ma" id="middle">
