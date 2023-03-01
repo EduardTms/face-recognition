@@ -80,6 +80,7 @@ class App extends Component {
       }),
     })
       .then((response) => response.json())
+      // this response sends the user id to the backend so it can increase the entries
       .then((response) => {
         if (response) {
           fetch("https://nameless-reef-02646.herokuapp.com/image", {
@@ -91,6 +92,8 @@ class App extends Component {
           })
             .then((response) => response.json())
             .then((count) => {
+              // Object.assign copies the properties of the source object and returns the modified target object
+              // Object.assign(target, ...sources)
               this.setState(Object.assign(this.state.user, { entries: count }));
             })
             .catch(console.log);
@@ -101,6 +104,7 @@ class App extends Component {
   };
 
   onRouteChange = (route) => {
+    // resets the state to the initial state which removes all previous data
     if (route === "signout") {
       this.setState(initialState);
     } else if (route === "home") {
